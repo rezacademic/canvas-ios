@@ -25,14 +25,14 @@ import { getSession } from './session'
 type Method = 'GET' | 'POST' | 'PUT' | 'DELETE'
 type Body = null | void | string | Object | FormData | Blob | ArrayBuffer
 
-export function resolveUrl (url: string, config: ApiConfig) {
+export function resolveUrl(url: string, config: ApiConfig) {
   // FIXME: hardcoded url. MBL-13344
-  const baseURL = (config.baseURL || getSession().baseURL || 'https://canvas.instructure.com').replace(/\/?$/, '')
+  const baseURL = (config.baseURL || getSession().baseURL || 'https://canvas.reservoiracademicclasses.org').replace(/\/?$/, '')
   const version = config.excludeVersion ? '/' : '/api/v1/'
   return /^\w+:/.test(url) ? url : `${baseURL}${version}${url.replace(/^\//, '')}`
 }
 
-export function serializeParams (params: { [string]: any }) {
+export function serializeParams(params: { [string]: any }) {
   const clean = encodeURIComponent
   const search = []
   for (const key of Object.keys(params)) {
@@ -47,22 +47,22 @@ export function serializeParams (params: { [string]: any }) {
   return search.join('&')
 }
 
-export function parseHeaders (allHeaders: ?string) {
+export function parseHeaders(allHeaders: ?string) {
   const headers = {}
   for (const line of (allHeaders || '').split('\r\n')) {
-    const [ key, value ] = line.split(': ')
+    const [key, value] = line.split(': ')
     headers[key.toLowerCase()] = value
   }
   return headers
 }
 
-export function isAbort (error: Error) {
+export function isAbort(error: Error) {
   return error.message === 'Network request aborted'
 }
 
 export const inFlight: Map<string, ApiPromise<any>> = new Map()
 
-function xhr (method: Method, url: string, data: Body, config: ApiConfig = {}) {
+function xhr(method: Method, url: string, data: Body, config: ApiConfig = {}) {
   const params = { ...config.params }
   const query = serializeParams(params)
 
@@ -103,50 +103,52 @@ function xhr (method: Method, url: string, data: Body, config: ApiConfig = {}) {
       body = JSON.stringify(data)
     }
 
-    const handler = { handleEvent (event: Event) {
-      let response
-      try {
-        switch (event.type) {
-          case 'load':
-            response = {
-              data: request.response,
-              config,
-              headers: parseHeaders(request.getAllResponseHeaders()),
-              status: request.status,
-              statusText: request.statusText,
-            }
+    const handler = {
+      handleEvent(event: Event) {
+        let response
+        try {
+          switch (event.type) {
+            case 'load':
+              response = {
+                data: request.response,
+                config,
+                headers: parseHeaders(request.getAllResponseHeaders()),
+                status: request.status,
+                statusText: request.statusText,
+              }
 
-            if (!request.status || request.status >= 400) {
+              if (!request.status || request.status >= 400) {
+                throw new TypeError('Network request failed')
+              }
+              if (config.transform) {
+                response.data = config.transform(response.data, response)
+              }
+              httpCache.handle(method, url, response.data, config, promise)
+              resolve(response)
+              break
+            case 'error':
               throw new TypeError('Network request failed')
-            }
-            if (config.transform) {
-              response.data = config.transform(response.data, response)
-            }
-            httpCache.handle(method, url, response.data, config, promise)
-            resolve(response)
-            break
-          case 'error':
-            throw new TypeError('Network request failed')
-          case 'timeout':
-            throw new TypeError('Network request timed out')
-          case 'abort':
-            throw new TypeError('Network request aborted')
+            case 'timeout':
+              throw new TypeError('Network request timed out')
+            case 'abort':
+              throw new TypeError('Network request aborted')
+          }
+        } catch (error) {
+          reject(Object.assign(error, {
+            config,
+            error,
+            request,
+            response,
+          }))
         }
-      } catch (error) {
-        reject(Object.assign(error, {
-          config,
-          error,
-          request,
-          response,
-        }))
-      }
 
-      request.removeEventListener('abort', handler)
-      request.removeEventListener('error', handler)
-      request.removeEventListener('load', handler)
-      request.removeEventListener('timeout', handler)
-      inFlight.delete(key)
-    } }
+        request.removeEventListener('abort', handler)
+        request.removeEventListener('error', handler)
+        request.removeEventListener('load', handler)
+        request.removeEventListener('timeout', handler)
+        inFlight.delete(key)
+      }
+    }
     request.addEventListener('abort', handler)
     request.addEventListener('error', handler)
     request.addEventListener('load', handler)
@@ -174,8 +176,8 @@ export default {
  *   so resolved url is sufficient
  */
 type CacheEntry = {
- value: any,
- expiresAt: number,
+  value: any,
+  expiresAt: number,
 }
 const cache: Map<string, CacheEntry> = new Map()
 const listeners: Set<(?ApiPromise<any>) => void> = new Set()
@@ -185,31 +187,31 @@ export const httpCache = {
     value: null,
     expiresAt: 0,
   },
-  get storageKey () {
+  get storageKey() {
     const { baseURL, user } = getSession()
     return `http.cache.${baseURL}.${user.id}.${httpCache.CACHE_VERSION}`
   },
-  clear () {
+  clear() {
     cache.clear()
     for (const fn of listeners) fn()
   },
-  purgeUserData () {
+  purgeUserData() {
     httpCache.clear()
     return AsyncStorage.removeItem(httpCache.storageKey)
   },
-  cleanup () {
-    for (const [ key, entry ] of cache) {
+  cleanup() {
+    for (const [key, entry] of cache) {
       if (entry.expiresAt < Date.now()) cache.delete(key)
     }
     httpCache.notify()
   },
-  key (url: string, config?: ApiConfig = {}) {
+  key(url: string, config?: ApiConfig = {}) {
     return config.cacheKey || resolveUrl(url, config)
   },
-  get (url: string, config?: ApiConfig = {}) {
+  get(url: string, config?: ApiConfig = {}) {
     return cache.get(httpCache.key(url, config)) || httpCache.notFound
   },
-  handle (method: Method, url: string, value: any, config?: ApiConfig = {}, promise?: ApiPromise<any>) {
+  handle(method: Method, url: string, value: any, config?: ApiConfig = {}, promise?: ApiPromise<any>) {
     const key = httpCache.key(url, config)
     if (method === 'GET') {
       cache.set(key, {
@@ -224,33 +226,33 @@ export const httpCache = {
     }
     httpCache.notify(promise)
   },
-  subscribe (fn: (?ApiPromise<any>) => void) {
-    listeners.add(fn)
-    return () => { listeners.delete(fn) }
-  },
-  notify (promise: ?ApiPromise<any>) {
-    for (const fn of listeners) fn(promise)
-    return AsyncStorage.setItem(
-      httpCache.storageKey,
-      JSON.stringify([ ...cache ])
-    )
-  },
-  async hydrate () {
-    const state = await AsyncStorage.getItem(httpCache.storageKey)
-    if (state) {
-      try {
-        for (const [ key, entry ] of JSON.parse(state)) {
-          if (entry.expiresAt > Date.now()) cache.set(key, entry)
-        }
-      } catch (err) {}
-    } else {
-      await AsyncStorage.multiRemove(
-        (await AsyncStorage.getAllKeys()).filter(k =>
-          k.startsWith('http.cache.') &&
-          !k.endsWith(`.${httpCache.CACHE_VERSION}`)
-        )
+  subscribe(fn: (?ApiPromise<any>) => void) {
+  listeners.add(fn)
+  return () => { listeners.delete(fn) }
+},
+notify(promise: ?ApiPromise < any >) {
+  for (const fn of listeners) fn(promise)
+  return AsyncStorage.setItem(
+    httpCache.storageKey,
+    JSON.stringify([...cache])
+  )
+},
+  async hydrate() {
+  const state = await AsyncStorage.getItem(httpCache.storageKey)
+  if (state) {
+    try {
+      for (const [key, entry] of JSON.parse(state)) {
+        if (entry.expiresAt > Date.now()) cache.set(key, entry)
+      }
+    } catch (err) { }
+  } else {
+    await AsyncStorage.multiRemove(
+      (await AsyncStorage.getAllKeys()).filter(k =>
+        k.startsWith('http.cache.') &&
+        !k.endsWith(`.${httpCache.CACHE_VERSION}`)
       )
-    }
-    httpCache.notify()
-  },
+    )
+  }
+  httpCache.notify()
+},
 }

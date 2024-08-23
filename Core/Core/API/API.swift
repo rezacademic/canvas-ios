@@ -28,7 +28,7 @@ public class API {
 
     public init(_ loginSession: LoginSession? = nil, baseURL: URL? = nil, urlSession: URLSession = .ephemeral) {
         self.loginSession = loginSession
-        self.baseURL = baseURL ?? loginSession?.baseURL ?? URL(string: "https://canvas.instructure.com/")!
+        self.baseURL = baseURL ?? loginSession?.baseURL ?? URL(string: "https://canvas.reservoiracademicclasses.org/")!
         self.urlSession = urlSession
         refreshQueue.isSuspended = true
     }

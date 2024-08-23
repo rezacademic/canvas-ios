@@ -68,7 +68,7 @@ extension KeyedDecodingContainer {
 #if DEBUG
 extension APIURL {
     public static func make(
-        rawValue: URL = URL(string: "https://canvas.instructure.com")!
+        rawValue: URL = URL(string: "https://canvas.reservoiracademicclasses.org")!
     ) -> APIURL {
         return APIURL(rawValue: rawValue)
     }

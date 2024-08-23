@@ -23,7 +23,7 @@ import template, { type Template } from '../utils/template'
 export const externalTool: Template<AddressBookResult> = template({
   id: '1',
   name: 'LTI FTW',
-  url: 'https://canvas.instructure.com/lti',
+  url: 'https://canvas.reservoiracademicclasses.org/lti',
 })
 
 export const ltiLaunchDefinition: Template<LtiLaunchDefinition> = template({

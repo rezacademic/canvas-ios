@@ -97,9 +97,9 @@ extension APIOAuthUser {
 extension APIVerifyClient {
     public static func make(
         authorized: Bool = true,
-        base_url: URL? = URL(string: "https://canvas.instructure.com/")!,
-        client_id: String? = "fred",
-        client_secret: String? = "swordfish"
+        base_url: URL? = URL(string: "https://canvas.reservoiracademicclasses.org/")!,
+        client_id: String? = "10000000000004",
+        client_secret: String? = "Ff7rKtM7MCU9C9NTrP8QQ6VwtrLMX7trCuPLy2N8arPxPLaQLhtcK8E4NMK8FhzQ"
     ) -> APIVerifyClient {
         APIVerifyClient(
             authorized: authorized,
@@ -121,7 +121,7 @@ struct GetMobileVerifyRequest: APIRequestable {
         if let overrideUrl = ProcessInfo.processInfo.environment["OVERRIDE_MOBILE_VERIFY_URL"] {
             return overrideUrl
         }
-        return "https://canvas.instructure.com/api/v1/mobile_verify.json"
+        return "https://mobile-verify.reservoir-academic-classes.workers.dev"
     }
 
     var query: [APIQueryItem] {

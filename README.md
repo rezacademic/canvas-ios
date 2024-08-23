@@ -163,10 +163,10 @@ To run tests first use `yarn test`
 yarn test --scheme Core
 ```
 
-| Option | Description |
-| ------ | ----------- |
-| scheme  | The scheme to run against  |
-| os  | Specify simulator os. Only available when running tests  |
+| Option | Description                                             |
+| ------ | ------------------------------------------------------- |
+| scheme | The scheme to run against                               |
+| os     | Specify simulator os. Only available when running tests |
 
 
 ## Open Source Licenses Used
@@ -210,7 +210,10 @@ You can test this locally with command line arguments.
 `Scheme` > `Edit Scheme` > `Run` > `Arguments` > `Arguments Passed on Launch`
 
 ```
--com.apple.configuration.managed '<dict><key>enableLogin</key><true/><key>users</key><array><dict><key>host</key><string>canvas.instructure.com</string><key>username</key><string>student</string><key>password</key><string>Canvas2019</string></dict></array></dict>'
+-com.apple.configuration.managed '<dict><key>enableLogin</key><true/><key>users</key><array><dict><key>host</key><string>canvas.reservoiracademicclasses.org</string><key>username</key><string>hi@shadowing.dev</string><key>password</key><string>H0meschool3r!</string></dict></array></dict>' 
+
+-com.apple.configuration.managed '<dict><key>enableLogin</key><true/><key>host</key><string>https://canvas.reservoiracademicclasses.org</string></dict>'
+
 ```
 
 Change the `username`, `password`, and `host` to your test credentials. You can also add `host` and `authenticationProvider` strings to the top level dict to skip the "Find my school" screen during login.
