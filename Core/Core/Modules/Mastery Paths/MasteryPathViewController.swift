@@ -236,6 +236,6 @@ class MasteryPathAssignmentSetDivider: UIView {
 }
 
 extension Notification.Name {
-    fileprivate static let masteryPathSelected = Notification.Name(rawValue: "com.instructure.core.notification.masteryPathSelected")
-    fileprivate static let masteryPathAssignmentSelected = Notification.Name("com.instructure.core.notification.masteryPathAssignmentSelected")
+    fileprivate static let masteryPathSelected = Notification.Name(rawValue: "dev.shadowing.core.notification.masteryPathSelected")
+    fileprivate static let masteryPathAssignmentSelected = Notification.Name("dev.shadowing.core.notification.masteryPathAssignmentSelected")
 }

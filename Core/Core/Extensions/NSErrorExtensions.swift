@@ -20,7 +20,7 @@ import Foundation
 
 extension NSError {
     public struct Constants {
-        public static let domain = "com.instructure"
+        public static let domain = "dev.shadowing"
         public static let internalError = "Internal Error"
     }
 
@@ -80,7 +80,7 @@ extension NSError {
             alert.addAction(report)
             alert.addAction(dismiss)
 
-        case ("com.instructure.canvas", 90211): // push channel error. no idea where 90211 comes from.
+        case ("dev.shadowing.canvas", 90211): // push channel error. no idea where 90211 comes from.
             alert.title = String(localized: "Notification Error", bundle: .core)
             alert.message = String(localized: "There was a problem registering your device for push notifications.", bundle: .core)
             alert.addAction(report)

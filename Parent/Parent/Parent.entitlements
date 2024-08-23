@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>aps-environment</key>
-	<string>development</string>
-	<key>com.apple.developer.associated-domains</key>
-	<array>
-		<string>applinks:sso.canvaslms.com</string>
-		<string>applinks:sso.beta.canvaslms.com</string>
-		<string>applinks:sso.test.canvaslms.com</string>
-	</array>
-	<key>com.apple.security.application-groups</key>
-	<array>
-		<string>group.com.instructure.Contexts</string>
-		<string>group.instructure.shared</string>
-	</array>
-	<key>keychain-access-groups</key>
-	<array>
-		<string>$(AppIdentifierPrefix)com.instructure.parentapp</string>
-	</array>
-</dict>
+	<dict>
+		<key>aps-environment</key>
+		<string>development</string>
+		<key>com.apple.developer.associated-domains</key>
+		<array>
+			<string>applinks:sso.canvaslms.com</string>
+			<string>applinks:sso.beta.canvaslms.com</string>
+			<string>applinks:sso.test.canvaslms.com</string>
+		</array>
+		<key>com.apple.security.application-groups</key>
+		<array>
+			<string>group.dev.shadowing.Contexts</string>
+			<string>group.raccanvas.shared</string>
+		</array>
+		<key>keychain-access-groups</key>
+		<array>
+			<string>$(AppIdentifierPrefix)dev.shadowing.parentapp</string>
+		</array>
+	</dict>
 </plist>

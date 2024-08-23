@@ -110,7 +110,7 @@ public class UITestHelpers {
     weak var appDelegate: UIApplicationDelegate?
     let decoder = JSONDecoder()
     let encoder = JSONEncoder()
-    let pasteboardType = "com.instructure.ui-test-helper"
+    let pasteboardType = "dev.shadowing.ui-test-helper"
     let window: ActAsUserWindow?
 
     var ipcAppServer: IPCAppServer?

@@ -4,12 +4,12 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.instructure.ios.teacher</string>
+		<string>group.dev.shadowing.ios.teacher</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)com.instructure.ios.teacher</string>
-		<string>$(AppIdentifierPrefix)com.instructure.shared-credentials</string>
+		<string>$(AppIdentifierPrefix)dev.shadowing.ios.teacher</string>
+		<string>$(AppIdentifierPrefix)dev.shadowing.shared-credentials</string>
 	</array>
 </dict>
 </plist>

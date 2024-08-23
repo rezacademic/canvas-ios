@@ -18,7 +18,7 @@
 
 public class StaffContactInfoService {
     private let courseIds: [String]
-    private let synchronizerQueue = DispatchQueue(label: "com.instructure.staffcontactinfoservice")
+    private let synchronizerQueue = DispatchQueue(label: "dev.shadowing.staffcontactinfoservice")
     private let enrollments: [BaseEnrollmentType] = [.ta, .teacher]
     private let taskCount: Int
     private var completedTasksCount = 0

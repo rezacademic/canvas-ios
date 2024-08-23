@@ -59,7 +59,7 @@ final class CourseSyncProgressInteractorLive: CourseSyncProgressInteractor {
         useCase: GetCourseSyncSelectorCourses()
     )
     private let backgroundQueue = DispatchQueue(
-        label: "com.instructure.icanvas.core.course-sync-progress-utility",
+        label: "dev.shadowing.icanvas.core.course-sync-progress-utility",
         attributes: .concurrent
     )
     private var safeCourseSyncEntriesValue: [CourseSyncEntry] {
@@ -79,7 +79,7 @@ final class CourseSyncProgressInteractorLive: CourseSyncProgressInteractor {
         sessionDefaults: SessionDefaults = AppEnvironment.shared.userDefaults ?? .fallback,
         container: NSPersistentContainer = AppEnvironment.shared.database,
         scheduler: AnySchedulerOf<DispatchQueue> = DispatchQueue(
-            label: "com.instructure.icanvas.core.course-sync-progress"
+            label: "dev.shadowing.icanvas.core.course-sync-progress"
         ).eraseToAnyScheduler()
     ) {
         self.courseSyncListInteractor = courseSyncListInteractor

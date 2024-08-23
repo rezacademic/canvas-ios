@@ -5,7 +5,7 @@ attributes: {
 }
 options:
   groupSortPosition: top
-  bundleIdPrefix: com.instructure.icanvas
+  bundleIdPrefix: dev.shadowing.icanvas
   deploymentTarget:
     iOS: 16.0
   createIntermediateGroups: true
@@ -66,7 +66,7 @@ targets:
     platform: iOS
     transitivelyLinkDependencies: false
     settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.instructure.CoreTester
+      PRODUCT_BUNDLE_IDENTIFIER: dev.shadowing.CoreTester
       CODE_SIGN_ENTITLEMENTS: CoreTester/CoreTester.entitlements
     sources:
       - path: CoreTester

@@ -366,7 +366,7 @@ extension StudentAppDelegate {
     func setupPageViewLogging() {
         class BackgroundAppHelper: AppBackgroundHelperProtocol {
 
-            let queue = DispatchQueue(label: "com.instructure.icanvas.app-background-helper", attributes: .concurrent)
+            let queue = DispatchQueue(label: "dev.shadowing.icanvas.app-background-helper", attributes: .concurrent)
             var tasks: [String: UIBackgroundTaskIdentifier] = [:]
 
             func startBackgroundTask(taskName: String) {

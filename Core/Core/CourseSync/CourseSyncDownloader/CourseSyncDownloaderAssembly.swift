@@ -23,7 +23,7 @@ public enum CourseSyncDownloaderAssembly {
 
     public static func makeInteractor(env: AppEnvironment = .shared) -> CourseSyncInteractor {
         let scheduler = DispatchQueue(
-            label: "com.instructure.icanvas.core.course-sync-download"
+            label: "dev.shadowing.icanvas.core.course-sync-download"
         ).eraseToAnyScheduler()
 
         let loginSession = env.currentSession

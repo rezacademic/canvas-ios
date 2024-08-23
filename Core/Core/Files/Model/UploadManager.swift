@@ -27,8 +27,8 @@ enum FileUploaderError: Error {
 }
 
 open class UploadManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionDataDelegate {
-    public static let AssignmentSubmittedNotification = NSNotification.Name(rawValue: "com.instructure.core.assignment-submitted")
-    public static var shared = UploadManager(identifier: "com.instructure.core.file-uploads")
+    public static let AssignmentSubmittedNotification = NSNotification.Name(rawValue: "dev.shadowing.core.assignment-submitted")
+    public static var shared = UploadManager(identifier: "dev.shadowing.core.file-uploads")
 
     public let identifier: String
     public let sharedContainerIdentifier: String?

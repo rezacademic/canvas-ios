@@ -49,7 +49,7 @@ public final class CourseSyncInteractorLive: CourseSyncInteractor {
     }
 
     private let backgroundQueue = DispatchQueue(
-        label: "com.instructure.icanvas.core.course-sync-utility",
+        label: "dev.shadowing.icanvas.core.course-sync-utility",
         attributes: .concurrent
     )
     private let fileErrorMessage = String(localized: "File download failed.", bundle: .core)

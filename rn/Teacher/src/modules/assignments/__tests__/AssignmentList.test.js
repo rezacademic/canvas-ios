@@ -76,11 +76,11 @@ describe('AssignmentList', () => {
   it('currentGradingPeriodID is used for initial filter', () => {
     let groupOne = templates.assignmentGroup({
       id: '1',
-      assignments: [ templates.assignment({ id: '1' }) ],
+      assignments: [templates.assignment({ id: '1' })],
     })
     let groupTwo = templates.assignmentGroup({
       id: '2',
-      assignments: [ templates.assignment({ id: '2' }) ],
+      assignments: [templates.assignment({ id: '2' })],
     })
     let gradingPeriod = templates.gradingPeriod({
       assignmentRefs: ['1'],
@@ -102,11 +102,11 @@ describe('AssignmentList', () => {
   it('currentGradingPeriodID can apply when gradingPeriods loads', () => {
     let groupOne = templates.assignmentGroup({
       id: '1',
-      assignments: [ templates.assignment({ id: '1' }) ],
+      assignments: [templates.assignment({ id: '1' })],
     })
     let groupTwo = templates.assignmentGroup({
       id: '2',
-      assignments: [ templates.assignment({ id: '2' }) ],
+      assignments: [templates.assignment({ id: '2' })],
     })
     let gradingPeriod = templates.gradingPeriod({
       assignmentRefs: ['1'],
@@ -201,11 +201,11 @@ describe('AssignmentList', () => {
   it('filters list by grading period', () => {
     let groupOne = templates.assignmentGroup({
       id: '1',
-      assignments: [ templates.assignment({ id: '1', name: 'One' }) ],
+      assignments: [templates.assignment({ id: '1', name: 'One' })],
     })
     let groupTwo = templates.assignmentGroup({
       id: '2',
-      assignments: [ templates.assignment({ id: '2', name: 'Two' }) ],
+      assignments: [templates.assignment({ id: '2', name: 'Two' })],
     })
     let gradingPeriod = templates.gradingPeriod({
       assignmentRefs: ['1'],
@@ -331,7 +331,7 @@ describe('AssignmentList', () => {
     defaultProps.courseID = '1'
     shallow(<AssignmentList {...defaultProps} showGrades />)
     expect(NativeModules.SiriShortcutManager.donateSiriShortcut).toHaveBeenCalledWith({
-      identifier: 'com.instructure.siri.shortcut.getgrades',
+      identifier: 'dev.shadowing.siri.shortcut.getgrades',
       name: '123',
       url: '/courses/1/grades',
     })

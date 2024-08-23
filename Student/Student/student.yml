@@ -7,7 +7,7 @@ targets:
     settings:
       APPLICATION_EXTENSION_API_ONLY: false
       SWIFT_EMIT_LOC_STRINGS: true
-      PRODUCT_BUNDLE_IDENTIFIER: com.instructure.icanvas
+      PRODUCT_BUNDLE_IDENTIFIER: dev.shadowing.icanvas
       INFOPLIST_FILE: Student/Info.plist
       CODE_SIGN_ENTITLEMENTS: Student/Student.entitlements
       TARGETED_DEVICE_FAMILY: 1,2

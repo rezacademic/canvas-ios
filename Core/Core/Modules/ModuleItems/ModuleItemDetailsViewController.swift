@@ -205,6 +205,6 @@ public final class ModuleItemDetailsViewController: UIViewController, ColoredNav
 }
 
 extension Notification.Name {
-    static let moduleItemViewDidLoad = Notification.Name(rawValue: "com.instructure.core.notification.ModuleItemViewDidLoad")
-    public static let moduleItemRequirementCompleted = Notification.Name(rawValue: "com.instructure.core.notification.ModuleItemRequirementCompleted")
+    static let moduleItemViewDidLoad = Notification.Name(rawValue: "dev.shadowing.core.notification.ModuleItemViewDidLoad")
+    public static let moduleItemRequirementCompleted = Notification.Name(rawValue: "dev.shadowing.core.notification.ModuleItemRequirementCompleted")
 }

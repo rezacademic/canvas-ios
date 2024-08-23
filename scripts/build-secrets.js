@@ -33,7 +33,7 @@ const { execSync } = require('child_process')
 const run = (cmd) => execSync(cmd, { stdio: 'inherit' })
 
 for (const secret of process.argv.slice(2)) {
-  let [ name, ...value ] = secret.split('=')
+  let [name, ...value] = secret.split('=')
   value = value.join('=')
 
   const paddingSize = Math.ceil(Math.random() * 32)
@@ -43,9 +43,9 @@ for (const secret of process.argv.slice(2)) {
   }
   padding[padding.length - 1] = paddingSize
 
-  const mixer = Buffer.from(`${name}+com.instructure.icanvas.Core`, 'utf8')
-  let data = Buffer.concat([ Buffer.from(value, 'utf8'), padding ])
-  for (const [ offset, element ] of data.entries()) {
+  const mixer = Buffer.from(`${name}+dev.shadowing.icanvas.Core`, 'utf8')
+  let data = Buffer.concat([Buffer.from(value, 'utf8'), padding])
+  for (const [offset, element] of data.entries()) {
     data[offset] = data[offset] ^ mixer[offset % mixer.length]
   }
 

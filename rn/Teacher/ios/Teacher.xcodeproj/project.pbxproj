@@ -1671,7 +1671,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"DEBUG\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.instructure.ios.teacher;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.shadowing.ios.teacher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1734,7 +1734,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.instructure.ios.teacher;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.shadowing.ios.teacher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1767,7 +1767,7 @@
 				MARKETING_VERSION = 0.0.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.instructure.ios.teacher.TeacherFiles;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.shadowing.ios.teacher.TeacherFiles;
 				PRODUCT_NAME = TeacherFiles;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1800,7 +1800,7 @@
 				);
 				MARKETING_VERSION = 0.0.1;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.instructure.ios.teacher.TeacherFiles;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.shadowing.ios.teacher.TeacherFiles;
 				PRODUCT_NAME = TeacherFiles;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -1942,7 +1942,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.instructure.TeacherTests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.shadowing.TeacherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1976,7 +1976,7 @@
 					"@loader_path/Frameworks",
 				);
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.instructure.TeacherTests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.shadowing.TeacherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Teacher.app/Teacher";
@@ -2005,7 +2005,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.instructure.TeacherE2ETests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.shadowing.TeacherE2ETests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2036,7 +2036,7 @@
 					"@loader_path/Frameworks",
 				);
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.instructure.TeacherE2ETests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.shadowing.TeacherE2ETests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Teacher;

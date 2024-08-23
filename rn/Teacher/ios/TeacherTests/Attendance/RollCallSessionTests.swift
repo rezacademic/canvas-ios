@@ -57,7 +57,7 @@ class RollCallSessionTests: TeacherTestCase, RollCallSessionDelegate {
         api.mock(launchRequest, error: NSError.internalError())
         switch session.state {
         case .error(let error):
-            XCTAssertEqual((error as NSError).domain, "com.instructure.rollcall")
+            XCTAssertEqual((error as NSError).domain, "dev.shadowing.rollcall")
             XCTAssertEqual(error.localizedDescription, "Failed to launch rollcall LTI tool.")
         default:
             XCTFail("Session loading should have failed")
@@ -69,7 +69,7 @@ class RollCallSessionTests: TeacherTestCase, RollCallSessionDelegate {
         session.launch(url: URL(string: "data:text/plain,")!)
         switch session.state {
         case .error(let error):
-            XCTAssertEqual((error as NSError).domain, "com.instructure.rollcall")
+            XCTAssertEqual((error as NSError).domain, "dev.shadowing.rollcall")
             XCTAssertEqual(error.localizedDescription, "Error: No data returned from the rollcall api.")
         default:
             XCTFail("Session loading should have failed")
@@ -82,7 +82,7 @@ class RollCallSessionTests: TeacherTestCase, RollCallSessionDelegate {
         api.mock(launchRequest, value: .make(url: url))
         switch session.state {
         case .error(let error):
-            XCTAssertEqual((error as NSError).domain, "com.instructure.rollcall")
+            XCTAssertEqual((error as NSError).domain, "dev.shadowing.rollcall")
             XCTAssertEqual(error.localizedDescription, "Error")
         default:
             XCTFail("Session loading should have failed")

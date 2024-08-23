@@ -23,19 +23,19 @@ private class Placeholder {}
 public extension Bundle {
     @objc static let core = Bundle(for: Placeholder.self)
 
-    static let studentBundleID = "com.instructure.icanvas"
-    static let teacherBundleID = "com.instructure.ios.teacher"
-    static let parentBundleID = "com.instructure.parentapp"
+    static let studentBundleID = "dev.shadowing.icanvas"
+    static let teacherBundleID = "dev.shadowing.ios.teacher"
+    static let parentBundleID = "dev.shadowing.parentapp"
 
-    static let coreBundleID = "com.instructure.core"
+    static let coreBundleID = "dev.shadowing.core"
 
-    static let studentUITestsBundleID = "com.instructure.StudentUITests.xctrunner"
-    static let teacherUITestsBundleID = "com.instructure.TeacherUITests.xctrunner"
-    static let parentUITestsBundleID = "com.instructure.ParentUITests.xctrunner"
+    static let studentUITestsBundleID = "dev.shadowing.StudentUITests.xctrunner"
+    static let teacherUITestsBundleID = "dev.shadowing.TeacherUITests.xctrunner"
+    static let parentUITestsBundleID = "dev.shadowing.ParentUITests.xctrunner"
 
-    static let studentE2ETestsBundleID = "com.instructure.StudentE2ETests.xctrunner"
-    static let teacherE2ETestsBundleID = "com.instructure.TeacherE2ETests.xctrunner"
-    static let parentE2ETestsBundleID = "com.instructure.ParentE2ETests.xctrunner"
+    static let studentE2ETestsBundleID = "dev.shadowing.StudentE2ETests.xctrunner"
+    static let teacherE2ETestsBundleID = "dev.shadowing.TeacherE2ETests.xctrunner"
+    static let parentE2ETestsBundleID = "dev.shadowing.ParentE2ETests.xctrunner"
 
     func appGroupID(bundleID: String? = nil) -> String? {
         if (bundleID ?? bundleIdentifier)?.hasPrefix(Bundle.studentBundleID) == true {
@@ -44,7 +44,7 @@ public extension Bundle {
         return nil
     }
 
-    var appBundleIdentifier: String { bundleIdentifier ?? "com.instructure.app" }
+    var appBundleIdentifier: String { bundleIdentifier ?? "dev.shadowing.app" }
     var isStudentApp: Bool { bundleIdentifier == Bundle.studentBundleID || isStudentTestsRunner }
     var isTeacherApp: Bool { bundleIdentifier == Bundle.teacherBundleID || isTeacherTestsRunner }
     var isParentApp: Bool { bundleIdentifier == Bundle.parentBundleID || isParentTestsRunner }

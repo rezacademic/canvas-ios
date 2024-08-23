@@ -82,11 +82,11 @@ export class AssignmentList extends Component<AssignmentListProps, State> {
     selectedRowID: null,
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.showCurrentPeriod()
   }
 
-  componentDidUpdate (prevProps: AssignmentListProps) {
+  componentDidUpdate(prevProps: AssignmentListProps) {
     if (
       prevProps.gradingPeriods.length !== this.props.gradingPeriods.length ||
       prevProps.currentGradingPeriodID !== this.props.currentGradingPeriodID
@@ -95,14 +95,14 @@ export class AssignmentList extends Component<AssignmentListProps, State> {
     }
   }
 
-  showCurrentPeriod () {
+  showCurrentPeriod() {
     const index = this.props.gradingPeriods.findIndex(({ id }) =>
       id === this.props.currentGradingPeriodID
     )
     if (index >= 0) this.updateFilter(index)
   }
 
-  UNSAFE_componentWillReceiveProps (nextProps: AssignmentListProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: AssignmentListProps) {
     if (nextProps.assignmentGroups.length && nextProps.gradingPeriods.length) {
       NativeAccessibility.refresh()
     }
@@ -112,14 +112,14 @@ export class AssignmentList extends Component<AssignmentListProps, State> {
     }
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     const currentScore = this.state.currentScore || 0
     if (this.props.showTotalScore && currentScore > 90) {
       NativeModules.AppStoreReview.handleSuccessfulSubmit()
     }
   }
 
-  prepareListData () {
+  prepareListData() {
     return this.props.assignmentGroups.map(group => {
       let gradingPeriodFilter
       if (this.state.currentFilter.index != null) {
@@ -226,7 +226,7 @@ export class AssignmentList extends Component<AssignmentListProps, State> {
     }
   }
 
-  render () {
+  render() {
     if (this.props.pending && !this.props.refreshing) {
       return <ActivityIndicatorView />
     }
@@ -237,7 +237,7 @@ export class AssignmentList extends Component<AssignmentListProps, State> {
     }
 
     if (this.props.showGrades) {
-      SiriShortcutManager.donateSiriShortcut({ 'identifier': 'com.instructure.siri.shortcut.getgrades', 'url': `/courses/${this.props.courseID}/grades`, 'name': this.props.courseCode })
+      SiriShortcutManager.donateSiriShortcut({ 'identifier': 'dev.shadowing.siri.shortcut.getgrades', 'url': `/courses/${this.props.courseID}/grades`, 'name': this.props.courseCode })
     }
 
     return (

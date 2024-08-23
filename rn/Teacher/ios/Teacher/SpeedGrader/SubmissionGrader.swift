@@ -386,5 +386,5 @@ private func interpolate(value: CGFloat, fromMin: CGFloat, fromMax: CGFloat, toM
 }
 
 extension NSNotification.Name {
-    public static var SpeedGraderAttemptPickerChanged = NSNotification.Name("com.instructure.core.speedgrader-attempt-changed")
+    public static var SpeedGraderAttemptPickerChanged = NSNotification.Name("dev.shadowing.core.speedgrader-attempt-changed")
 }

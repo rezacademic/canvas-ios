@@ -19,7 +19,7 @@
 import Foundation
 
 extension UNNotificationContent {
-    public static let RouteURLKey = "com.instructure.core.router.notification-url"
+    public static let RouteURLKey = "dev.shadowing.core.router.notification-url"
 }
 
 extension UNNotificationRequest {

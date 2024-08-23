@@ -19,7 +19,7 @@
 import BackgroundTasks
 
 public class OfflineSyncBackgroundTaskRequest: BGProcessingTaskRequest {
-    public static let ID = "com.instructure.icanvas.offline-sync"
+    public static let ID = "dev.shadowing.icanvas.offline-sync"
 
     public init?(nextSyncDate: OfflineSyncNextDateInteractor, sessions: Set<LoginSession>) {
         guard let nextSyncDate = nextSyncDate.calculate(sessionUniqueIDs: sessions.map { $0.uniqueID }) else { return nil }

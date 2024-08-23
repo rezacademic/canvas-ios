@@ -21,7 +21,7 @@ import Core
 
 public class SiriShortcutManager: NSObject {
     enum ShortcutType: String {
-        case grades = "com.instructure.siri.shortcut.getgrades"
+        case grades = "dev.shadowing.siri.shortcut.getgrades"
 
         func title(userInfo: [String: Any]) -> String {
             switch self {

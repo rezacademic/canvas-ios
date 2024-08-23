@@ -21,11 +21,11 @@ import XCTest
 
 class NSErrorExtensionsTests: CoreTestCase {
     func testInternalError() {
-        XCTAssertEqual(NSError.internalError(), NSError(domain: "com.instructure", code: 0, userInfo: [NSLocalizedDescriptionKey: "Internal Error"]))
+        XCTAssertEqual(NSError.internalError(), NSError(domain: "dev.shadowing", code: 0, userInfo: [NSLocalizedDescriptionKey: "Internal Error"]))
     }
 
     func testInstructureError() {
-        XCTAssertEqual(NSError.instructureError("doh!"), NSError(domain: "com.instructure", code: 0, userInfo: [NSLocalizedDescriptionKey: "doh!"]))
+        XCTAssertEqual(NSError.instructureError("doh!"), NSError(domain: "dev.shadowing", code: 0, userInfo: [NSLocalizedDescriptionKey: "doh!"]))
     }
 
     func testShouldRecordInCrashlytics() {
@@ -59,7 +59,7 @@ class NSErrorExtensionsTests: CoreTestCase {
         XCTAssertEqual(alert?.message, error.localizedDescription)
         XCTAssertEqual(alert?.actions.count, 2)
 
-        error = NSError(domain: "com.instructure.canvas", code: 90211)
+        error = NSError(domain: "dev.shadowing.canvas", code: 90211)
         error.showAlert(from: view)
         alert = router.presented as? UIAlertController
         XCTAssertEqual(alert?.title, "Notification Error")

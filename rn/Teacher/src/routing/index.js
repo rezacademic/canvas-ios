@@ -37,7 +37,7 @@ import getClient from '../canvas-api-v2/client'
 const { Helm } = NativeModules
 
 export const routes: Map<RouteHandler, RouteConfig> = new Map()
-export const routeProps: Map<string, ?Object> = new Map()
+export const routeProps: Map<string,?Object> = new Map()
 export type RouteConfig = {
   canBecomeMaster?: boolean,
   checkRoles?: boolean,
@@ -50,7 +50,7 @@ export type RouteOptions = {
   config: RouteConfig,
 }
 
-export function registerScreen (
+export function registerScreen(
   path: string,
   ScreenComponent,
   store?: Store,
@@ -67,7 +67,7 @@ export function registerScreen (
   }
 }
 
-export function wrapComponentInProviders (moduleName: string, ScreenComponent, store: Store): any {
+export function wrapComponentInProviders(moduleName: string, ScreenComponent, store: Store): any {
   class Scene extends React.Component<any, any> {
     static displayName = `Scene(${moduleName})`
 
@@ -81,11 +81,11 @@ export function wrapComponentInProviders (moduleName: string, ScreenComponent, s
       screenInstanceID: PropTypes.string,
     }
 
-    componentDidCatch (error, info) {
+    componentDidCatch(error, info) {
       global.crashReporter.setString('screenUrl', moduleName)
       global.crashReporter.setBool('screenError', true)
 
-      let domain = `com.instructure.ios.${app.current().appId}`
+      let domain = `dev.shadowing.ios.${app.current().appId}`
       global.crashReporter.recordError({
         domain,
         userInfo: {
@@ -95,13 +95,13 @@ export function wrapComponentInProviders (moduleName: string, ScreenComponent, s
       this.setState({ hasError: true })
     }
 
-    getChildContext () {
+    getChildContext() {
       return {
         screenInstanceID: this.props.screenInstanceID,
       }
     }
 
-    render () {
+    render() {
       let {
         navigatorOptions,
         ...props
@@ -135,7 +135,7 @@ export function wrapComponentInProviders (moduleName: string, ScreenComponent, s
   return () => Scene
 }
 
-export function route (url: string, additionalProps: Object = {}): ?RouteOptions {
+export function route(url: string, additionalProps: Object = {}): ?RouteOptions {
   const baseURL = getSession().baseURL
   const location = new URL(url, baseURL, true)
   if (url.includes('://') && new URL(baseURL).hostname !== location.hostname) {
@@ -162,7 +162,7 @@ export function route (url: string, additionalProps: Object = {}): ?RouteOptions
         }
       }
     }
-  } catch (e) {} // If there is a problem with the url for whatever reason, we'll default to just popping it into a web view
+  } catch (e) { } // If there is a problem with the url for whatever reason, we'll default to just popping it into a web view
 
   return
 }

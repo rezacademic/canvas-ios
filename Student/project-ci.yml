@@ -2,7 +2,7 @@
 name: Student
 options:
   groupSortPosition: top
-  bundleIdPrefix: com.instructure.icanvas
+  bundleIdPrefix: dev.shadowing.icanvas
   deploymentTarget:
     iOS: 16.0
   createIntermediateGroups: true
