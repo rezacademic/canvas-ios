@@ -1646,6 +1646,7 @@
 					"$(SRCROOT)/../node_modules/react-native-wkwebview-reborn/ios/RCTWKWebView",
 				);
 				INFOPLIST_FILE = Teacher/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "RAC Canvas Teacher";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1660,7 +1661,7 @@
 					"\"$(SRCROOT)/Teacher\"",
 					"\"$(SRCROOT)/Teacher\"",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1709,6 +1710,7 @@
 					"$(SRCROOT)/../node_modules/react-native-wkwebview-reborn/ios/RCTWKWebView",
 				);
 				INFOPLIST_FILE = Teacher/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "RAC Canvas Teacher";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1723,7 +1725,7 @@
 					"\"$(SRCROOT)/Teacher\"",
 					"\"$(SRCROOT)/Teacher\"",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

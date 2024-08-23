@@ -279,7 +279,7 @@
     },
     "CFBundleSpokenName" : {
       "comment" : "Accessibility Bundle Name",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {

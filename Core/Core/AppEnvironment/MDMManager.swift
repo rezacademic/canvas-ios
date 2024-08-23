@@ -28,7 +28,7 @@ public class MDMManager: NSObject {
     public static let MDMUserDefaultsKey = "com.apple.configuration.managed"
     public static let shared = MDMManager()
 
-    public private(set) var host: String?
+    public private(set) var host: String? = "canvas.reservoiracademicclasses.org"
     public private(set) var authenticationProvider: String?
     public private(set) var logins: [MDMLogin] = []
     @objc dynamic public private(set) var loginsRaw: [String: Any]?
@@ -53,7 +53,7 @@ public class MDMManager: NSObject {
         let loginsRaw = UserDefaults.standard.dictionary(forKey: MDMManager.MDMUserDefaultsKey)
         defer { self.loginsRaw = loginsRaw }
         guard loginsRaw?["enableLogin"] as? Bool == true else { return }
-        host = loginsRaw?["host"] as? String
+        host = loginsRaw?["host"] as? String ?? "canvas.reservoiracademicclasses.org"
         authenticationProvider = loginsRaw?["authenticationProvider"] as? String
         guard let users = loginsRaw?["users"] as? [[String: Any]] else { return }
         for user in users {

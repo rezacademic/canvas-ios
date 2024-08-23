@@ -1497,7 +1497,7 @@
 				CODE_SIGN_ENTITLEMENTS = Parent/Parent.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: iOS Builds (73MVYX3ELK)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2012;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = XY32MW6N78;
 				ENABLE_BITCODE = NO;
@@ -1506,11 +1506,13 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Parent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "RAC Canvas Parent";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.shadowing.parentapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1532,7 +1534,7 @@
 				CODE_SIGN_ENTITLEMENTS = Parent/Parent.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Instructure, Inc. (CTY8556YU9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2012;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XY32MW6N78;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1540,11 +1542,13 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Parent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "RAC Canvas Parent";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.shadowing.parentapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
