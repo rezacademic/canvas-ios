@@ -403,7 +403,7 @@ extension TeacherAppDelegate: LoginDelegate, NativeLoginManagerDelegate {
     func actAsStudentViewStudent(studentViewStudent: APIUser) {
         if let url = URL(string: "canvas-student://"), UIApplication.shared.canOpenURL(url) {
             actAsFakeStudent(with: studentViewStudent.id.rawValue, rootAccount: studentViewStudent.root_account)
-        } else if let url = URL(string: "https://itunes.apple.com/us/app/canvas-student/id480883488?ls=1&mt=8") {
+        } else if let url = URL(string: "https://www.reservoiracademicclasses.org/canvas-apps") {
             openExternalURL(url)
         }
     }
