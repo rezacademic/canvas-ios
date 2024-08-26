@@ -148,6 +148,7 @@ class LoginStartViewController: UIViewController {
         canvasNetworkButton.setTitle(String(localized: "Canvas Network", bundle: .core), for: .normal)
         canvasNetworkButton.isHidden = loginDelegate?.supportsCanvasNetwork == false || MDMManager.shared.host != nil
         useQRCodeDivider.isHidden = canvasNetworkButton.isHidden
+        useQRCodeButton.isHidden = canvasNetworkButton.isHidden
     }
 
     @objc func userDefaultsDidChange(_ notification: Notification) {
