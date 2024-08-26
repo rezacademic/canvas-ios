@@ -48,7 +48,7 @@ public class WrongAppViewController: UIViewController {
 
         loginButton?.setTitle(String(localized: "Log In Again", bundle: .core).localizedUppercase, for: .normal)
         canvasGuidesButton?.setTitle(String(localized: "Canvas Guides", bundle: .core).localizedUppercase, for: .normal)
-        canvasGuidesButton?.isHidden = !Bundle.main.isParentApp
+        canvasGuidesButton?.isHidden = true
 
         parentButton?.isHidden = Bundle.main.isParentApp
         parentButton?.accessibilityLabel = String(localized: "Canvas Parent", bundle: .core)
@@ -73,17 +73,17 @@ public class WrongAppViewController: UIViewController {
     }
 
     @IBAction func parentPressed() {
-        guard let url = URL(string: "https://itunes.apple.com/us/app/canvas-parent/id1097996698?ls=1&mt=8") else { return }
+        guard let url = URL(string: "https://www.reservoiracademicclasses.org/canvas-apps") else { return }
         delegate?.openExternalURL(url)
     }
 
     @IBAction func studentPressed() {
-        guard let url = URL(string: "https://itunes.apple.com/us/app/canvas-student/id480883488?ls=1&mt=8") else { return }
+        guard let url = URL(string: "https://www.reservoiracademicclasses.org/canvas-apps") else { return }
         delegate?.openExternalURL(url)
     }
 
     @IBAction func teacherPressed() {
-        guard let url = URL(string: "https://itunes.apple.com/us/app/canvas-teacher/id1257834464?ls=1&mt=8") else { return }
+        guard let url = URL(string: "https://www.reservoiracademicclasses.org/canvas-apps") else { return }
         delegate?.openExternalURL(url)
     }
 }
