@@ -101,7 +101,6 @@
 		B1FF02D2240435B0004B7B1C /* KeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FF02D1240435B0004B7B1C /* KeychainTests.swift */; };
 		B417C2E62B1F169000CD6FA4 /* SubmissionCommentListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417C2E52B1F169000CD6FA4 /* SubmissionCommentListViewModelTests.swift */; };
 		B4707B052B1DDF7900F67CA8 /* SubmissionCommentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4707B042B1DDF7900F67CA8 /* SubmissionCommentListViewModel.swift */; };
-		B49725D6290C06220067B91E /* Heap in Frameworks */ = {isa = PBXBuildFile; productRef = B49725D5290C06220067B91E /* Heap */; };
 		CF04D3162BC5714F009D8C86 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CF04D3152BC5714F009D8C86 /* PrivacyInfo.xcprivacy */; };
 		CF13E54C299D090500F57F69 /* QuizSubmissionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF13E54B299D090500F57F69 /* QuizSubmissionListViewModel.swift */; };
 		CF13E550299D0E0B00F57F69 /* QuizSubmissionListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF13E54F299D0E0B00F57F69 /* QuizSubmissionListInteractor.swift */; };
@@ -364,7 +363,6 @@
 			files = (
 				2C50EDE11E735CA50096592C /* AssetsLibrary.framework in Frameworks */,
 				CFAA40232AE2633A002C7AAE /* PSPDFKit in Frameworks */,
-				B49725D6290C06220067B91E /* Heap in Frameworks */,
 				2C50EE031E735CBB0096592C /* AVFoundation.framework in Frameworks */,
 				497CA7331F82AE8D00501613 /* CanvasCore.framework in Frameworks */,
 				7D3DA83A2187615E000D828F /* Core.framework in Frameworks */,
@@ -937,7 +935,6 @@
 			);
 			name = Teacher;
 			packageProductDependencies = (
-				B49725D5290C06220067B91E /* Heap */,
 				CFAA40222AE2633A002C7AAE /* PSPDFKit */,
 			);
 			productName = "Hello World";
@@ -1091,7 +1088,6 @@
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			packageReferences = (
-				B49725D4290C06220067B91E /* XCRemoteSwiftPackageReference "heap-ios-sdk" */,
 				CFAA40212AE2633A002C7AAE /* XCRemoteSwiftPackageReference "PSPDFKit-SP" */,
 			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
@@ -2092,14 +2088,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B49725D4290C06220067B91E /* XCRemoteSwiftPackageReference "heap-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/heap/heap-ios-sdk.git";
-			requirement = {
-				kind = exactVersion;
-				version = 9.1.0;
-			};
-		};
 		CFAA40212AE2633A002C7AAE /* XCRemoteSwiftPackageReference "PSPDFKit-SP" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/PSPDFKit/PSPDFKit-SP";
@@ -2111,11 +2099,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B49725D5290C06220067B91E /* Heap */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B49725D4290C06220067B91E /* XCRemoteSwiftPackageReference "heap-ios-sdk" */;
-			productName = Heap;
-		};
 		CFAA40222AE2633A002C7AAE /* PSPDFKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CFAA40212AE2633A002C7AAE /* XCRemoteSwiftPackageReference "PSPDFKit-SP" */;

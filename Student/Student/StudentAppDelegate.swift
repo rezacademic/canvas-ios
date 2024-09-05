@@ -21,7 +21,6 @@ import CanvasCore
 import Combine
 import Core
 import Firebase
-import Heap
 import PSPDFKit
 import UIKit
 import UserNotifications
@@ -290,24 +289,9 @@ extension StudentAppDelegate: Core.AnalyticsHandler {
     }
 
     private func initializeTracking() {
-        guard
-            let environmentFeatureFlags,
-            !ProcessInfo.isUITest,
-            let heapID = Secret.heapID.string
-        else {
-            return
-        }
-
-        let isSendUsageMetricsEnabled = environmentFeatureFlags.isFeatureEnabled(.send_usage_metrics)
-        let options = HeapOptions()
-        options.disableTracking = !isSendUsageMetricsEnabled
-        Heap.initialize(heapID, with: options)
-        Heap.setTrackingEnabled(isSendUsageMetricsEnabled)
-        environment.heapID = Heap.userId()
     }
 
     private func disableTracking() {
-        Heap.setTrackingEnabled(false)
     }
 }
 

@@ -19,15 +19,6 @@
       }
     },
     {
-      "identity" : "heap-ios-sdk",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/heap/heap-ios-sdk.git",
-      "state" : {
-        "revision" : "ebb29dcd3181f11715b07b54dff909e3bdedba3b",
-        "version" : "9.1.0"
-      }
-    },
-    {
       "identity" : "lottie-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-ios.git",

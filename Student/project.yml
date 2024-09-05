@@ -30,9 +30,6 @@ projectReferences:
   Core:
     path: ../Core/Core.xcodeproj
 packages:
-  Heap:
-    url: https://github.com/heap/heap-ios-sdk.git
-    exactVersion: 9.1.0
   PSPDFKit:
     url: https://github.com/PSPDFKit/PSPDFKit-SP
     exactVersion: 13.0.1
